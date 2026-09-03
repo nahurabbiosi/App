@@ -1,0 +1,38 @@
+{
+  "expo": {
+    "name": "Juntada Fútbol",
+    "slug": "juntada-futbol",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "juntada",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.juntada.futbol",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Necesitamos tu ubicación para mostrarte partidos cercanos."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#10B981"
+      },
+      "package": "com.juntada.futbol",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Necesitamos tu ubicación para mostrarte partidos cercanos."
+        }
+      ],
+      "expo-asset"
+    ]
+  }
+}
