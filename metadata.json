@@ -1,0 +1,6 @@
+{
+  "name": "Falta1",
+  "description": "Falta1 - Plataforma de fútbol amateur para encontrar partidos, completar cupos y jugar con una estética profesional.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

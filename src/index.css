@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --bg-carbon: #121417;
+    --card-graphite: #1E2228;
+    --border-graphite: #2A2F38;
+    --emerald-pitch: #0F4C3A;
+    --cyan-accent: #00F0FF;
+    --neon-green: #00E676;
+    --text-muted: #A0AAB4;
+    --text-light-muted: #6C757D;
+  }
+
+  body {
+    background-color: #121417;
+    color: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'Inter', sans-serif;
+  }
+
+  /* When explicitly in light mode */
+  html:not(.dark) body {
+    background-color: #F4F6F8;
+    color: #121417;
+  }
+
+  /* Universal Caret Color for Falta1: Verde Neón (#00E676) */
+  input,
+  textarea,
+  select {
+    caret-color: #00E676 !important;
+  }
+
+  /* Regla General de UI para Formularios en Falta1 */
+  /* Modo Oscuro (Fondo oscuro #1E2228 o #121417 -> Texto claro #FFFFFF, Placeholder #A0AAB4) */
+  .dark-mode input,
+  .dark input,
+  .dark-mode textarea,
+  .dark textarea,
+  input.input-dark,
+  textarea.input-dark,
+  input[class*="bg-[#1E2228]"],
+  input[class*="bg-[#121417]"],
+  textarea[class*="bg-[#1E2228]"],
+  textarea[class*="bg-[#121417]"] {
+    color: #FFFFFF !important;
+  }
+
+  .dark-mode input::placeholder,
+  .dark input::placeholder,
+  .dark-mode textarea::placeholder,
+  .dark textarea::placeholder,
+  input.input-dark::placeholder,
+  textarea.input-dark::placeholder,
+  input[class*="bg-[#1E2228]"]::placeholder,
+  input[class*="bg-[#121417]"]::placeholder,
+  textarea[class*="bg-[#1E2228]"]::placeholder,
+  textarea[class*="bg-[#121417]"]::placeholder {
+    color: #A0AAB4 !important;
+    opacity: 1;
+  }
+
+  /* Modo Claro (Fondo blanco #FFFFFF o #F5F5F5 -> Texto oscuro #121417, Placeholder #6C757D) */
+  .light-mode input,
+  .light-mode textarea,
+  input.input-light,
+  textarea.input-light,
+  input[class*="bg-white"],
+  input[class*="bg-gray-50"],
+  textarea[class*="bg-white"],
+  textarea[class*="bg-gray-50"] {
+    color: #121417 !important;
+  }
+
+  .light-mode input::placeholder,
+  .light-mode textarea::placeholder,
+  input.input-light::placeholder,
+  textarea.input-light::placeholder,
+  input[class*="bg-white"]::placeholder,
+  input[class*="bg-gray-50"]::placeholder,
+  textarea[class*="bg-white"]::placeholder,
+  textarea[class*="bg-gray-50"]::placeholder {
+    color: #6C757D !important;
+    opacity: 1;
+  }
+}
+
+/* Falta1 Sporty Italic Logo Style */
+.falta1-brand {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Impact', sans-serif;
+  letter-spacing: -0.04em;
+}
+
+@keyframes pulse-cyan {
+  0%, 100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 6px rgba(0, 240, 255, 0.8));
+  }
+  50% {
+    opacity: 0.55;
+    filter: drop-shadow(0 0 2px rgba(0, 240, 255, 0.3));
+  }
+}
+
+.animate-pulse-cyan {
+  animation: pulse-cyan 1.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+
